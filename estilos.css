@@ -16,7 +16,7 @@ a{
 
 nav a{ /*"nav a" Selecciona a todos los enlaces dentro de Nav en el index.*/
     font-weight: 600;
-    padding-right: 10px;
+    margin: 5px;
 }
 
 nav a:hover{ /*Hover aplica el estilo cuando el mouse se pasa por encima.*/
@@ -197,12 +197,23 @@ header{
 /* Esto afecta la posicion de las cosas cuando se altera la resolucion de la ventana.*/
 
 @media (max-width: 800px){
+
     header{
         flex-direction: column;
     }
 
+    .contenedor{
+        flex-direction: column;
+        
+    }
+
     nav{
-        padding: 10px 0px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .pie-pagina .grupo-1 .box figure{
+        width: 90%;
     }
 
     .pie-pagina .grupo-1{
@@ -212,21 +223,10 @@ header{
         padding: 35px 0px;
     }
 
-    .contenedor{
-        flex-direction: column;
-        
-    }
-
     .contenedor img {
         max-width: 95%; /* Ancho máximo de la imagen */
         height: auto; /* Mantiene la relación de aspecto */
         margin: 0 3px; /* Márgenes de 5px en ambos lados */
-    }
-
-    .pie-pagina .grupo-1 .box figure{
-        width: 90%;
-        
-    
     }
     
 }
