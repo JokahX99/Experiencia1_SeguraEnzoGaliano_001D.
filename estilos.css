@@ -4,6 +4,10 @@ body{
     margin: 0;
 }
 
+html,body{
+    overflow-x: hidden;
+}
+
 /*Personalizar Links*/
 a{
     text-decoration: none;
@@ -18,6 +22,13 @@ nav a{ /*"nav a" Selecciona a todos los enlaces dentro de Nav en el index.*/
 nav a:hover{ /*Hover aplica el estilo cuando el mouse se pasa por encima.*/
     color: rgb(255, 183, 111);
 }
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
 
 /* Cabecera */
 header{
@@ -105,8 +116,8 @@ header{
     grid-template-columns: repeat(3, auto); /* Columnas de ancho automático */
     grid-gap: 10px; /* Espacio entre las imágenes */
     justify-content: center; /* Centra el contenido horizontalmente */
-    padding: 4% 0; /* Ajusta el relleno */
-    max-width: 900px; /* Ancho máximo del contenedor */
+    padding: 1% 0; /* Ajusta el relleno */
+    max-width: 900px; /* Ancho máximo del contenedor, impide que se separen mucho las imagenes conforme uno agranda la ventana*/
     margin: 0 auto; /* Centra el contenedor */
 }
 
@@ -136,7 +147,7 @@ header{
 }
 
 .pie-pagina .grupo-1 .box figure{
-    width: 100%;
+    width: 70%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -185,7 +196,7 @@ header{
 /* (Responsive Web Design) */
 /* Esto afecta la posicion de las cosas cuando se altera la resolucion de la ventana.*/
 
-@media (max-width: 700px){
+@media (max-width: 800px){
     header{
         flex-direction: column;
     }
@@ -197,13 +208,19 @@ header{
     .pie-pagina .grupo-1{
         width: 90%; /* Quitamos un poco para añadir asi un margen y no quede pegado a los lados*/
         grid-template-columns: repeat(1, 1fr);
-        grid-gap: 30px;
+        grid-gap: 30px; /*Espacio entre elementos del grid*/
         padding: 35px 0px;
     }
 
     .contenedor{
         flex-direction: column;
         
+    }
+
+    .pie-pagina .grupo-1 .box figure{
+        width: 90%;
+        
+    
     }
     
 }
