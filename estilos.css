@@ -217,6 +217,12 @@ header{
         
     }
 
+    .contenedor img {
+        max-width: 95%; /* Ancho máximo de la imagen */
+        height: auto; /* Mantiene la relación de aspecto */
+        margin: 0 3px; /* Márgenes de 5px en ambos lados */
+    }
+
     .pie-pagina .grupo-1 .box figure{
         width: 90%;
         
