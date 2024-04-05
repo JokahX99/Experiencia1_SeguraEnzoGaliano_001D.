@@ -1,0 +1,509 @@
+/*-------------------------GENERAL-------------------------*/
+
+/*Todo*/
+body{
+    font-family: sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    padding: 10;
+    display: flex; /*Uso en tandem con el footer*/
+    flex-direction: column; /*pal footer tambien*/
+    overflow-x: hidden;
+}
+
+/*Posicion reproductor de video*/
+.videocaja {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 30px;
+}
+
+
+/*Paragraphs*/
+p {
+    text-align: center; /* Centra el texto */
+    line-height: 1.2; /* Espacio entre líneas más compacto */
+    margin-bottom: 10px; /* Espacio entre párrafos */
+    padding: 0 15%;
+}
+
+/*Personalizar Links*/
+a{
+    color: rgb(63, 191, 255);
+}
+
+/*-------------------------Cabecera-------------------------*/
+
+header{
+    display: flex;
+    min-height: 40px; /*Colocar altura minima permite que se adapte a ventanas mas pequeñas.*/
+    background-color: coral;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+/*Links del header*/
+header a{
+    text-decoration: none;
+    color: white;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo h2{
+    color: white;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav a{ /*"nav a" Selecciona a todos los enlaces dentro de Nav en el index.*/
+    font-weight: 600;
+    margin: 5px;
+}
+
+nav a:hover{ /*Hover aplica el estilo cuando el mouse se pasa por encima.*/
+    color: rgb(255, 183, 111);
+}
+
+/*-------------------------Dropdown-------------------------*/
+
+ul{
+    list-style: none;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;  
+}
+
+ul li a{
+    display: block;
+    padding: 10px 25px;
+    text-decoration: none;
+    text-align: center;
+}
+
+ul li ul.dropdown li{
+    display: block;
+}
+
+ul li ul.dropdown{
+    width: 100%;
+    background: rgb(222, 102, 58);
+    position: absolute;
+    z-index: 999;
+    display: none;
+    
+}
+
+ul li:hover ul.dropdown{
+    display: block;
+}
+
+
+/*-------------------------Carrusel-------------------------*/
+
+#slider {
+    margin: 0 auto;
+    width: 800px;
+    max-width: 100%;
+    text-align: center;
+}
+
+#slider input[type=radio] {
+    display: none;
+}
+
+#slider label {
+    cursor:pointer;
+    text-decoration: none;
+}
+
+#slides {
+    padding: 10px;
+    border: 3px solid #ccc;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+#overflow {
+    width: 100%;
+    overflow: hidden;
+}
+
+#slide1:checked ~ #slides .inner {
+    margin-left: 0;
+}
+
+#slide2:checked ~ #slides .inner {
+    margin-left: -100%;
+}
+
+#slide3:checked ~ #slides .inner {
+    margin-left: -200%;
+}
+
+#slide4:checked ~ #slides .inner {
+    margin-left: -300%;
+}
+
+#slides .inner {
+    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    width: 400%;
+    line-height: 0;
+    height: 400px; /* Altura predeterminada */
+}
+
+#slides .slide {
+    width: 25%;
+    float:left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+}
+
+#slides .slide img {
+    width: 100%;
+    height: auto; /* Ajusta automáticamente la altura para mantener la relación de aspecto */
+    object-fit: cover; /* Hace que la imagen se ajuste manteniendo su relación de aspecto */
+}
+
+#controls {
+    margin: -180px 0 0 0;
+    width: 100%;
+    height: 50px;
+    z-index: 3;
+    position: relative;
+}
+
+#controls label {
+    transition: opacity 0.2s ease-out;
+    display: none;
+    width: 50px;
+    height: 50px;
+    opacity: .4;
+}
+
+#controls label:hover {
+    opacity: 1;
+}
+
+/*Botones*/
+#bullets {
+    margin: 150px 0 0;
+    text-align: center;
+}
+
+#bullets label {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius:100%;
+    background: #ccc;
+    margin: 0 10px;
+}
+
+/*Boton Presionado*/
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4) {
+    background: coral;
+}
+
+
+/*--------------------------------------------------POPUP'S------------------------------------------------- */
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Por defecto oculto */
+    position: fixed; /* Fijar posición */
+    z-index: 1; /* Posición al frente */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Margen superior/inferior y centrado horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del contenido */
+}
+
+/* Estilos para el botón de cerrar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/*-------------------------Footer-------------------------*/ /* faltan muchos comentarios aqui, lo hare cuando pare de flojear */
+
+.fontainer{
+    color: white;
+    max-width: 1170px;
+    background-color: coral;
+    margin:auto; 
+}
+
+footer{
+    margin-top: 35px;
+}
+
+.footer{
+    background-color: coral;
+    padding: 30px;
+    margin-top: auto; /*ESTO HACE QUE EL FOOTER SE APEGUE AL BOTTOM DE LA PAGINA, NO EDITAR*/
+}
+
+.row{
+    display: flex;
+}
+
+ul{
+    list-style: none;
+}
+
+/*Columnas*/
+.footer-col{
+    text-align: center;
+    width:20%;
+    padding: 0 20px;
+    flex: 1; /* Hace que las columnas ocupen todo el espacio disponible */
+}
+
+/*Botones de red social*/
+.footer .fontainer .row .footer-col a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: white;
+    margin-right: 5px; /* Reduce el margen entre los iconos de redes sociales */
+    background-color: rgb(240, 103, 53);
+    text-align: center;
+}
+
+.footer .fontainer .row .footer-col img{
+    text-decoration: none;
+    width: 50%;
+    height: 100%;
+    line-height: 45px;
+    color: white;
+    margin-right: 5px; /* Reduce el margen entre los iconos de redes sociales */
+    text-align: center;
+}
+
+.footer .fontainer .row .footer-col a:hover{
+    color: rgb(255, 183, 111);
+}
+/*Copyright Footer*/
+.copyright{
+    background-color: rgb(240, 103, 53);
+    padding: 15px 10px;
+    text-align: center;
+    color: white;
+}
+
+/*---------------------------POPUPS/CELDAS PRODUCTOS------------------------*/
+
+/*Orden*/
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product {
+    text-align: center;
+}
+ 
+ .container .products-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:2rem;
+ }
+ /*Marco*/
+ .container .products-container .product{
+    text-align: center;
+    padding:3rem 2rem;
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    outline: .1rem solid #ccc;
+    outline-offset: -1.5rem;
+    cursor: pointer;
+ }
+ 
+ /*Tamaño imagen*/
+ .container .products-container .product img{
+    height: 18rem;
+ }
+ 
+ .cc .products-container .product h3{
+    padding:.5rem 0;
+    font-size: 2rem;
+    color:#444;
+ }
+ 
+ .cc .products-container .product .price{
+    font-size: 2rem;
+    color:#444;
+ }
+ 
+ /*Propiedades ventanas emergente*/
+ /*1er contenedor, fondo negro*/
+ .products-preview{
+    position: fixed;
+    top:0; left:0;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+ }
+ /*Ventana blanca, 2ndo contenedor*/
+ .products-preview .preview{
+    display: none;
+    padding:2rem;
+    text-align: center;
+    background: #fff;
+    position: relative;
+    width: 40rem;
+ }
+ 
+ /*Display del popup*/
+ .products-preview .preview.active{
+    display: inline-block;
+ }
+ 
+ /*Cruz de cierre*/
+ .products-preview .preview .fa-times{
+    position: absolute;
+    top:1rem; right:1.5rem;
+    cursor: pointer;
+    color:#444;
+    font-size: 4rem;
+ }
+ 
+ /*Titulo del pop up*/
+ .products-preview .preview h3{
+    color:#444;
+    padding:.5rem 0;
+    font-size: 2.5rem;
+ }
+ 
+/*Paragraph del pop up*/
+ .products-preview .preview p{
+    line-height: 1.5;
+    padding:1rem 0;
+    font-size: 1.6rem;
+    color:#777;
+ }
+ 
+ /*Precio pop up*/
+ .products-preview .preview .price{
+    padding:1rem 0;
+    font-size: 2.5rem;
+    color:#27ae60;
+ }
+ 
+ /*Botones pop up*/
+ .products-preview .preview .buttons{
+    display: flex;
+    gap:1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+ }
+ 
+ /*Estilo boton preview*/
+ .products-preview .preview .buttons a{
+    flex:1 1 16rem;
+    padding:1rem;
+    font-size: 1.8rem;
+    color:#444;
+    border:.1rem solid #444;
+ }
+ 
+ 
+/* Capacidad de respuesta del ancho de pantalla */
+/* (Responsive Web Design) */
+/* Esto afecta la posicion de las cosas cuando se altera la resolucion de la ventana.*/
+
+@media (max-width: 800px){
+
+    header{
+        flex-direction: column;
+    }
+
+    nav{
+        text-align: center;
+        padding: 10px;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+
+    /*Columnas*/
+    .footer-col {
+        width: auto; 
+        padding: 0; /* Elimina el relleno lateral de las columnas */
+        margin: 5px; 
+        text-align: center; 
+    }
+
+    .footer .fontainer .row .footer-col {
+        display: inline-block;
+    }
+
+    /*Pop up*/
+    .contenedor .popup_img img{
+        width: 95%;
+    }
+
+    /*Carrusel*/
+    #slides .inner {
+        height: auto; /* Calcula la altura proporcionalmente */
+    }
+
+    #slide1:checked ~ #controls label:nth-child(2),
+    #slide2:checked ~ #controls label:nth-child(3),
+    #slide3:checked ~ #controls label:nth-child(4),
+    #slide4:checked ~ #controls label:nth-child(1),
+    #slide1:checked ~ #controls label:nth-last-child(2),
+    #slide2:checked ~ #controls label:nth-last-child(3),
+    #slide3:checked ~ #controls label:nth-last-child(4),
+    #slide4:checked ~ #controls label:nth-last-child(1) {
+       margin: 0;
+    }
+    #slides {
+       max-width: calc(100% - 140px);
+       margin: 0 auto;
+    }
+
+    /*Pop Up*/
+    .products-preview .preview img{
+        height: 22rem;
+     }
+  
+  }
+  
