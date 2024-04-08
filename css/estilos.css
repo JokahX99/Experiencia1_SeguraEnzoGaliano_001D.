@@ -19,6 +19,7 @@ body{
     padding: 30px;
 }
 
+
 /*Paragraphs*/
 p {
     text-align: center; /* Centra el texto */
@@ -220,6 +221,39 @@ ul li:hover ul.dropdown{
     background: coral;
 }
 
+
+/*--------------------------------------------------POPUP'S------------------------------------------------- */
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Por defecto oculto */
+    position: fixed; /* Fijar posición */
+    z-index: 1; /* Posición al frente */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Margen superior/inferior y centrado horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del contenido */
+}
+
+/* Estilos para el botón de cerrar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
 /*-------------------------Footer-------------------------*/ /* faltan muchos comentarios aqui, lo hare cuando pare de flojear */
 
 .fontainer{
@@ -289,7 +323,127 @@ ul{
     color: white;
 }
 
+/*---------------------------POPUPS/CELDAS PRODUCTOS------------------------*/
 
+/*Orden*/
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product {
+    text-align: center;
+}
+ 
+ .container .products-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:2rem;
+ }
+ /*Marco*/
+ .container .products-container .product{
+    text-align: center;
+    padding:3rem 2rem;
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    outline: .1rem solid #ccc;
+    outline-offset: -1.5rem;
+    cursor: pointer;
+ }
+ 
+ /*Tamaño imagen*/
+ .container .products-container .product img{
+    height: 18rem;
+ }
+ 
+ .cc .products-container .product h3{
+    padding:.5rem 0;
+    font-size: 2rem;
+    color:#444;
+ }
+ 
+ .cc .products-container .product .price{
+    font-size: 2rem;
+    color:#444;
+ }
+ 
+ /*Propiedades ventanas emergente*/
+ /*1er contenedor, fondo negro*/
+ .products-preview{
+    position: fixed;
+    top:0; left:0;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+ }
+ /*Ventana blanca, 2ndo contenedor*/
+ .products-preview .preview{
+    display: none;
+    padding:2rem;
+    text-align: center;
+    background: #fff;
+    position: relative;
+    width: 40rem;
+ }
+ 
+ /*Display del popup*/
+ .products-preview .preview.active{
+    display: inline-block;
+ }
+ 
+ /*Cruz de cierre*/
+ .products-preview .preview .fa-times{
+    position: absolute;
+    top:1rem; right:1.5rem;
+    cursor: pointer;
+    color:#444;
+    font-size: 4rem;
+ }
+ 
+ /*Titulo del pop up*/
+ .products-preview .preview h3{
+    color:#444;
+    padding:.5rem 0;
+    font-size: 2.5rem;
+ }
+ 
+/*Paragraph del pop up*/
+ .products-preview .preview p{
+    line-height: 1.5;
+    padding:1rem 0;
+    font-size: 1.6rem;
+    color:#777;
+ }
+ 
+ /*Precio pop up*/
+ .products-preview .preview .price{
+    padding:1rem 0;
+    font-size: 2.5rem;
+    color:#27ae60;
+ }
+ 
+ /*Botones pop up*/
+ .products-preview .preview .buttons{
+    display: flex;
+    gap:1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+ }
+ 
+ /*Estilo boton preview*/
+ .products-preview .preview .buttons a{
+    flex:1 1 16rem;
+    padding:1rem;
+    font-size: 1.8rem;
+    color:#444;
+    border:.1rem solid #444;
+ }
+ 
+ 
 /* Capacidad de respuesta del ancho de pantalla */
 /* (Responsive Web Design) */
 /* Esto afecta la posicion de las cosas cuando se altera la resolucion de la ventana.*/
@@ -321,6 +475,11 @@ ul{
         display: inline-block;
     }
 
+    /*Pop up*/
+    .contenedor .popup_img img{
+        width: 95%;
+    }
+
     /*Carrusel*/
     #slides .inner {
         height: auto; /* Calcula la altura proporcionalmente */
@@ -341,5 +500,10 @@ ul{
        margin: 0 auto;
     }
 
+    /*Pop Up*/
+    .products-preview .preview img{
+        height: 22rem;
+     }
+  
   }
   
