@@ -11,6 +11,14 @@ body{
     overflow-x: hidden;
 }
 
+/*Posicion reproductor de video*/
+.videocaja {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 30px;
+}
+
 /*Paragraphs*/
 p {
     text-align: center; /* Centra el texto */
