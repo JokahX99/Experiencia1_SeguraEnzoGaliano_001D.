@@ -3,32 +3,99 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Web</title>
+    <link rel="stylesheet" href="css/estilos.css"> <!--Importar estilos de otro archivo--> 
+    <script src="https://kit.fontawesome.com/165547e65c.js" crossorigin="anonymous"></script> <!--Importando Iconos-->
+    <title>Inicio</title>
 </head>
 <body>
     <header>
+        <!--Header/Cabecera-->
+        <!--Video Contexto: https://www.youtube.com/watch?v=OuoLQiXPitk-->
+
         <div class ="logo"> 
-            <img src="" alt="[logo de la pagina]">
+            <img src="pics/logo.png" alt="logo de la pagina">
             <h2 class="nombre-empresa">Dog Lover</h2>
         </div>    
         <nav>
-            <a href="" class="nav-link">Inicio</a>
-            <a href="" class="nav-link">Accesorios</a>
-            <a href="" class="nav-link">Alimentos</a>
-            <a href="" class="nav-link">Acerca de</a>   
+            <ul>
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li>
+                <a href="" class="nav-link">v Productos</a>
+                <ul class="dropdown">
+                <li><a href="" class="nav-link">Accesorios</a></li>
+                <li><a href="" class="nav-link">Alimentos</a></li>
+                </ul>
+            </li>
+            <li><a href="" class="nav-link">Acerca de</a></li>    
             </ul>
             </nav>
+    
     </header>
     
     <!--Titulo y Parrafos-->
-    
     <center >
-        
     <h1>Inicio</h1>
     
     <p>En Dog Lover nos dedicamos a proporcionar a tus adoradas mascotas los cuidados que merecen, con una gama de servicios diseñados para mantener su bienestar y belleza. Nuestro compromiso es ofrecerte una experiencia de grooming excepcional, donde la comodidad y la salud de tu peludo amigo son nuestra prioridad número uno.</p>
 
     <p>Ofrecemos un servicio completo de peluquería canina, que incluye baño, corte y aseo general, todo realizado por nuestro equipo de peluqueros y peluqueras, quienes tienen una conexión insuperable con las mascotas. Nos preocupamos siempre por brindar un servicio respetuoso y cariñoso hacia los peludos amigos de nuestros clientes.</p>
+
+    </center>
+
+    <!--Carrusel de Imagenes-->
+    <div id="slider">
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        <input type="radio" name="slider" id="slide4">
+  
+        
+        <div id="slides">
+           <div id="overflow">
+              <div class="inner">
+                 <div class="slide slide_1">
+                    <div class="slide-content">
+                        <!--Imagen 1-->
+                       <img src="pics/carrusel1.png" alt="">
+                    </div>
+                 </div>
+                 <div class="slide slide_2">
+                    <div class="slide-content">
+                        <!--Imagen 1-->
+                       <img src="pics/carrusel2.png" alt="">
+                    </div>
+                 </div>
+                 <div class="slide slide_3">
+                    <div class="slide-content">
+                        <!--Imagen 1-->
+                       <img src="pics/carrusel3.png" alt="">
+                    </div>
+                 </div>
+                 <div class="slide slide_4">
+                    <div class="slide-content">
+                        <!--Imagen 1-->
+                       <img src="pics/carrusel4.png" alt="">
+                    </div>  
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div id="controls">
+           <label for="slide1"></label>
+           <label for="slide2"></label>
+           <label for="slide3"></label>
+           <label for="slide4"></label>
+        </div>
+
+        <div id="bullets">
+           <label for="slide1"></label>
+           <label for="slide2"></label>
+           <label for="slide3"></label>
+           <label for="slide4"></label>
+        </div>
+     </div>
+     
+    <center>
     
     <p>Servicio de solo baño: ¿Tu peludo necesita un refrescamiento rápido? Nuestro servicio de solo baño es perfecto para eso. Incluye un baño higiénico con shampoo neutro para mantener la limpieza de su pelaje, acompañado de un corte de uñas, un peinado profesional y el vital corte sanitario para mantener la higiene de su zona anal.
     </p>
@@ -45,6 +112,32 @@
 
     <p>¡Ven y únete a nuestra familia de Amigos Peludos para una experiencia de grooming que dejará a tu mascota luciendo y sintiéndose genial!</p>
 
+
     </center>
+    
+    <!--Footer-->
+    <footer class="footer">
+        <div class="fontainer">
+            <div class="row">
+                <div class="footer-col">
+                    <img src="pics/logo.png" alt="error">
+                </div>
+                <div class="footer-col">
+                    <h3>INTEGRANTES</h3>
+                    <p>David Segura</p>
+                    <p>Enzo Toledo</p>
+                    <p>Claudio Galiano</p>  
+                </div>
+                <div class="footer-col">
+                    <h3>SIGUENOS</h3>
+                    <a href="https://www.facebook.com/" class="fa fa-facebook" target="blank"></a>
+                    <a href="https://www.instagram.com/" class="fa fa-instagram" target="blank"></a>
+                    <a href="https://twitter.com/" class="fa fa-twitter" target="blank"></a> 
+                </div>
+            </div>
+        </div>
+    </footer>
+<div class="copyright">
+    <small>&copy; 2024 <b>Nombre Compañia</b> - Todos los Derechos Reservados.</small>
 </body>
 </html>
